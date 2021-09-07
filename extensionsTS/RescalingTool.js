@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -48,7 +48,7 @@ var __extends = (this && this.__extends) || (function () {
     * <a>RescalingTool.rescaleObjectName</a> and set <a>RescalingTool.isEnabled</a> to control
     * whether objects are rescalable and when.
     *
-    * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Rescaling.html">Rescaling</a> sample.
+    * If you want to experiment with this extension, try the <a href="../../extensionsTS/Rescaling.html">Rescaling</a> sample.
     * @category Tool Extension
     */
     var RescalingTool = /** @class */ (function (_super) {

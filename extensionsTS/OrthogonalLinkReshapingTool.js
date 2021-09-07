@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -37,7 +37,7 @@ var __extends = (this && this.__extends) || (function () {
     /**
      * The OrthogonalLinkReshapingTool class lets a user drag a tool handle along the link segment, which will move the whole segment.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/OrthogonalLinkReshaping.html">Orthogonal Link Reshaping</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/OrthogonalLinkReshaping.html">Orthogonal Link Reshaping</a> sample.
      * @category Tool Extension
      */
     var OrthogonalLinkReshapingTool = /** @class */ (function (_super) {

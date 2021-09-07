@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -15,7 +15,7 @@ import * as go from '../release/go-module.js';
 /**
  * The RowResizingTool class lets the user resize each row of a named Table Panel in a selected Part.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/ColumnResizing.html">Column Resizing</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/ColumnResizing.html">Column Resizing</a> sample.
  * @category Tool Extension
  */
 export class RowResizingTool extends go.Tool {

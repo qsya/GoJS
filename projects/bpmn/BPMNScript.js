@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -277,7 +277,9 @@ var __extends = (this && this.__extends) || (function () {
             selectionAdorned: false,
             contextMenu: activityNodeMenu,
             itemTemplate: boundaryEventItemTemplate
-        }, new go.Binding('itemArray', 'boundaryEventArray'), new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify), $(go.Panel, 'Auto', {
+        }, new go.Binding('itemArray', 'boundaryEventArray'), new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify), 
+        // move a selected part into the Foreground layer, so it isn"t obscured by any non-selected parts
+        new go.Binding('layerName', 'isSelected', function (s) { return s ? 'Foreground' : ''; }).ofObject(), $(go.Panel, 'Auto', {
             name: 'PANEL',
             minSize: new go.Size(ActivityNodeWidth, ActivityNodeHeight),
             desiredSize: new go.Size(ActivityNodeWidth, ActivityNodeHeight)
@@ -370,6 +372,8 @@ var __extends = (this && this.__extends) || (function () {
             locationSpot: go.Spot.Center,
             toolTip: tooltiptemplate
         }, new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify), 
+        // move a selected part into the Foreground layer, so it isn't obscured by any non-selected parts
+        new go.Binding('layerName', 'isSelected', function (s) { return s ? 'Foreground' : ''; }).ofObject(), 
         // can be resided according to the user's desires
         { resizable: false, resizeObjectName: 'SHAPE' }, $(go.Panel, 'Spot', $(go.Shape, 'Circle', // Outer circle
         {
@@ -424,6 +428,8 @@ var __extends = (this && this.__extends) || (function () {
             locationSpot: go.Spot.Center,
             toolTip: tooltiptemplate
         }, new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify), 
+        // move a selected part into the Foreground layer, so it isn't obscured by any non-selected parts
+        new go.Binding('layerName', 'isSelected', function (s) { return s ? 'Foreground' : ''; }).ofObject(), 
         // can be resided according to the user's desires
         { resizable: false, resizeObjectName: 'SHAPE' }, $(go.Panel, 'Spot', $(go.Shape, 'Diamond', {
             strokeWidth: 1, fill: GatewayNodeFill, stroke: GatewayNodeStroke,
@@ -516,42 +522,28 @@ var __extends = (this && this.__extends) || (function () {
             isSubGraphExpanded: false
         }, $(go.Shape, 'Process', { fill: 'white', desiredSize: new go.Size(GatewayNodeSize / 2, GatewayNodeSize / 4) }), $(go.Shape, 'Process', { fill: 'white', desiredSize: new go.Size(GatewayNodeSize / 2, GatewayNodeSize / 4) }), $(go.TextBlock, { margin: 5, editable: true }, new go.Binding('text')));
         var swimLanesGroupTemplateForPalette = $(go.Group, 'Vertical'); // empty in the palette
-        function assignGroupLayer(grp) {
-            if (!(grp instanceof go.Group))
-                return;
-            var lay = grp.isSelected ? "Foreground" : "";
-            grp.layerName = lay;
-            grp.findSubGraphParts().each(function (m) { m.layerName = lay; });
-        }
         var subProcessGroupTemplate = $(go.Group, 'Spot', {
             locationSpot: go.Spot.Center,
             locationObjectName: 'PH',
             // locationSpot: go.Spot.Center,
             isSubGraphExpanded: false,
-            subGraphExpandedChanged: function (grp) {
-                if (grp.isSubGraphExpanded)
-                    grp.isSelected = true;
-                assignGroupLayer(grp);
-            },
-            selectionChanged: assignGroupLayer,
-            computesBoundsAfterDrag: true,
             memberValidation: function (group, part) {
                 return !(part instanceof go.Group) ||
                     (part.category !== 'Pool' && part.category !== 'Lane');
             },
             mouseDrop: function (e, grp) {
-                if (e.shift || !(grp instanceof go.Group) || grp.diagram === null)
+                if (!(grp instanceof go.Group) || grp.diagram === null)
                     return;
                 var ok = grp.addMembers(grp.diagram.selection, true);
                 if (!ok)
                     grp.diagram.currentTool.doCancel();
-                else
-                    assignGroupLayer(grp);
             },
             contextMenu: activityNodeMenu,
-            itemTemplate: boundaryEventItemTemplate,
-            avoidable: false
-        }, new go.Binding('itemArray', 'boundaryEventArray'), new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify), $(go.Panel, 'Auto', $(go.Shape, 'RoundedRectangle', {
+            itemTemplate: boundaryEventItemTemplate
+        }, new go.Binding('itemArray', 'boundaryEventArray'), new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify), 
+        // move a selected part into the Foreground layer, so it isn't obscured by any non-selected parts
+        // new go.Binding("layerName", "isSelected", function (s) { return s ? "Foreground" : ""; }).ofObject(),
+        $(go.Panel, 'Auto', $(go.Shape, 'RoundedRectangle', {
             name: 'PH', fill: SubprocessNodeFill, stroke: SubprocessNodeStroke,
             minSize: new go.Size(ActivityNodeWidth, ActivityNodeHeight),
             portId: '', fromLinkable: true, toLinkable: true, cursor: 'pointer',
@@ -559,12 +551,18 @@ var __extends = (this && this.__extends) || (function () {
         }, new go.Binding('strokeWidth', 'isCall', function (s) { return s ? ActivityNodeStrokeWidthIsCall : ActivityNodeStrokeWidth; })), $(go.Panel, 'Vertical', { defaultAlignment: go.Spot.Left }, $(go.TextBlock, // label
         { margin: 3, editable: true }, new go.Binding('text', 'text').makeTwoWay(), new go.Binding('alignment', 'isSubGraphExpanded', function (s) { return s ? go.Spot.TopLeft : go.Spot.Center; })), 
         // create a placeholder to represent the area where the contents of the group are
-        $(go.Panel, "Auto", $(go.Shape, { opacity: 0.0 }), $(go.Placeholder, { padding: new go.Margin(5, 5) })), // end nested Auto Panel
-        makeMarkerPanel(true, 1) // sub-process,  loop, parallel, sequential, ad doc and compensation markers
+        $(go.Placeholder, { padding: new go.Margin(5, 5) }), makeMarkerPanel(true, 1) // sub-process,  loop, parallel, sequential, ad doc and compensation markers
         ) // end Vertical Panel
-        ) // end border Panel
-        ); // end Group
-        // ------------------------ Lanes and Pools ------------------------------------------------------------
+        )); // end Group
+        // ** need this in the subprocess group template above.
+        //        $(go.Shape, "RoundedRectangle",  // the inner "Transaction" rounded rectangle
+        //          { margin: 3,
+        //            stretch: go.GraphObject.Fill,
+        //            stroke: ActivityNodeStroke,
+        //            parameter1: 8, fill: null, visible: false
+        //          },
+        //          new go.Binding("visible", "isTransaction")
+        //         ),
         function groupStyle() {
             return [
                 {
@@ -649,11 +647,10 @@ var __extends = (this && this.__extends) || (function () {
                     return;
                 var shp = grp.resizeObject;
                 if (grp.isSubGraphExpanded) {
-                    shp.height = grp.data.savedBreadth;
+                    shp.height = grp['_savedBreadth'];
                 }
                 else {
-                    if (!isNaN(shp.height))
-                        grp.diagram.model.set(grp.data, "savedBreadth", shp.height);
+                    grp['_savedBreadth'] = shp.height;
                     shp.height = NaN;
                 }
                 updateCrossLaneLinks(grp);
@@ -822,9 +819,7 @@ var __extends = (this && this.__extends) || (function () {
                 linkingTool: new BPMNClasses_js_1.BPMNLinkingTool(),
                 relinkingTool: new BPMNClasses_js_1.BPMNRelinkingTool(),
                 'SelectionMoved': relayoutDiagram,
-                'SelectionCopied': relayoutDiagram,
-                "LinkDrawn": function (e) { assignGroupLayer(e.subject.containingGroup); },
-                "LinkRelinked": function (e) { assignGroupLayer(e.subject.containingGroup); }
+                'SelectionCopied': relayoutDiagram
             });
         myDiagram.addDiagramListener('LinkDrawn', function (e) {
             if (e.subject.fromNode.category === 'annotation') {

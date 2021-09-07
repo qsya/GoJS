@@ -1,6 +1,6 @@
 "use strict";
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 // A "ScrollingTable" Panel
@@ -121,7 +121,7 @@ go.GraphObject.defineBuilder("ScrollingTable", function(args) {
     if (rowh === 0 && idx < table.rowCount-2) rowh = table.elt(idx + 1).actualBounds.height;
     var numVisibleRows = Math.max(1, Math.ceil(tabh / rowh) - 1);
     var needed = idx > 0 || idx + numVisibleRows <= table.rowCount;
-    bar.opacity = needed ? 1.0 : 0.5;
+    bar.opacity = needed ? 1.0 : 0.0;
   }
 
   return $(go.Panel, "Table",

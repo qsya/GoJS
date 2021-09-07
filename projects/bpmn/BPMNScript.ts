@@ -1,6 +1,6 @@
 
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 import { DrawCommandHandler } from '../../extensionsTS/DrawCommandHandler.js';
@@ -930,9 +930,9 @@ export function init() {
           if (grp.diagram.undoManager.isUndoingRedoing) return;
           const shp = grp.resizeObject;
           if (grp.isSubGraphExpanded) {
-            shp.height = grp.data.savedBreadth;
+            shp.height = (grp as any)['_savedBreadth'];
           } else {
-            if (!isNaN(shp.height)) grp.diagram.model.set(grp.data, "savedBreadth", shp.height);
+            (grp as any)['_savedBreadth'] = shp.height;
             shp.height = NaN;
           }
           updateCrossLaneLinks(grp);

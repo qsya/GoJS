@@ -1,6 +1,6 @@
 ﻿"use strict";
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -107,10 +107,7 @@ RadialLayout.prototype.doLayout = function(coll) {
   if (this.network === null) {
     this.network = this.makeNetwork(coll);
   }
-  if (this.network.vertexes.count === 0) {
-    this.network = null;
-    return;
-  }
+  if (this.network.vertexes.count === 0) return;
 
   if (this.root === null) {
     // If no root supplied, choose one without any incoming edges
@@ -127,10 +124,7 @@ RadialLayout.prototype.doLayout = function(coll) {
     // If could not find any default root, choose a random one
     this.root = this.network.vertexes.first().node;
   }
-  if (this.root === null) {  // nothing to do
-    this.network = null;
-    return;
-  }  
+  if (this.root === null) return;  // nothing to do
 
   var rootvert = this.network.findVertex(this.root);
   if (rootvert === null) throw new Error("RadialLayout.root must be a Node in the LayoutNetwork that the RadialLayout is operating on")

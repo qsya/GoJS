@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -15,7 +15,7 @@ import * as go from '../release/go.js';
 /**
  * The OverviewResizingTool class lets the user resize the box within an overview.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/OverviewResizing.html">Overview Resizing</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/OverviewResizing.html">Overview Resizing</a> sample.
  * @category Tool Extension
  */
 export class OverviewResizingTool extends go.ResizingTool {

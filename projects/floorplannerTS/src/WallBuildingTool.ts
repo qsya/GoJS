@@ -1,12 +1,12 @@
 /**
- * Copyright (C) 1998-2021 by Northwoods Software Corporation
+ * Copyright (C) 1998-2020 by Northwoods Software Corporation
  * All Rights Reserved.
  *
  * FLOOR PLANNER - WALL BUILDING TOOL
  * Used to construct new Walls in a Floorplan with mouse clicking / mouse point
  */
 
-import * as go from '../../../release/go';
+import * as go from 'gojs';
 import { Floorplan } from './Floorplan.js';
 import { WallReshapingTool } from './WallReshapingTool.js';
 

@@ -1,6 +1,6 @@
 "use strict";
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 // HTML + JavaScript text editor using an HTML Select Element and HTMLInfo.
@@ -38,15 +38,15 @@
 
     // Do a few different things when a user presses a key
     customSelectBox.addEventListener("keydown", function(e) {
-      var key = e.key;
-      if (key === "Enter") { // Accept on Enter
+      var keynum = e.which;
+      if (keynum == 13) { // Accept on Enter
         tool.acceptText(go.TextEditingTool.Enter);
         return;
-      } else if (key === "Tab") { // Accept on Tab
+      } else if (keynum == 9) { // Accept on Tab
         tool.acceptText(go.TextEditingTool.Tab);
         e.preventDefault();
         return false;
-      } else if (key === "Escape") { // Cancel on Esc
+      } else if (keynum === 27) { // Cancel on Esc
         tool.doCancel();
         if (tool.diagram) tool.diagram.focus();
       }

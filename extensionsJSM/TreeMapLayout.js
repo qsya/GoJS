@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 /*
 * This is an extension and not part of the main GoJS library.
@@ -12,7 +12,7 @@ import * as go from '../release/go-module.js';
 /**
  * A custom {@link Layout} that lays out hierarchical data using nested rectangles.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/TreeMap.html">Tree Map Layout</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/TreeMap.html">Tree Map Layout</a> sample.
  * @category Layout Extension
  */
 export class TreeMapLayout extends go.Layout {

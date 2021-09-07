@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 /*
 * This is an extension and not part of the main GoJS library.
@@ -17,7 +17,7 @@ import * as go from '../release/go-module.js';
  * and the user holds down the Shift key.
  * It works by modifying that port's {@link GraphObject#alignment} property.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/PortShifting.html">Port Shifting</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/PortShifting.html">Port Shifting</a> sample.
  * @category Tool Extension
  */
 export class PortShiftingTool extends go.Tool {

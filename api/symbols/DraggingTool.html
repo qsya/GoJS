@@ -4,51 +4,51 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>DraggingTool | GoJS API</title>
-	<meta name="description" content="Documentation for GoJS API">
+	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../assets/css/style.css">
+	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
-	<nav id="navTop" class="w-full z-30 top-0 text-white bg-nwoods-primary">
-		<div class="w-full container max-w-screen-lg mx-auto flex flex-wrap sm:flex-nowrap items-center justify-between mt-0 py-2">
-			<div class="md:pl-4">
-				<a class="text-white hover:text-white no-underline hover:no-underline
-				font-bold text-2xl lg:text-4xl rounded-lg hover:bg-nwoods-secondary" href="../../index.html">
-				<h1 class="mb-0 p-1">GoJS</h1>
-				</a>
+	<!-- non-fixed navbar -->
+	<nav id="non-fixed-nav" class="navbar navbar-inverse navbar-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<div class="navheader-container">
+					<div class="navheader-collapse" data-toggle="collapse" data-target="#navbar">
+						<a id="toplogo" class="navbar-brand" href="../../index.html">GoJS</a>
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+				</div>
 			</div>
-			<button id="topnavButton" class="rounded-lg sm:hidden focus:outline-none focus:ring" aria-label="Navigation">
-				<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-					<path id="topnavOpen" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-					<path id="topnavClosed" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-				</svg>
-			</button>
-			<div id="topnavList" class="hidden sm:block items-center w-auto mt-0 text-white p-0 z-20">
-				<ul class="list-reset list-none font-semibold flex justify-end flex-wrap sm:flex-nowrap items-center px-0 pb-0">
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="../../learn/index.html">Learn</a></li>
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="../../samples/index.html">Samples</a></li>
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="../../intro/index.html">Intro</a></li>
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="../../api/index.html">API</a></li>
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="https://www.nwoods.com/products/register.html">Register</a></li>
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="../../download.html">Download</a></li>
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="https://forum.nwoods.com/c/gojs/11">Forum</a></li>
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="https://www.nwoods.com/contact.html"
-					target="_blank" rel="noopener" onclick="getOutboundLink('https://www.nwoods.com/contact.html', 'contact');">Contact</a></li>
-					<li class="p-1 sm:p-0"><a class="topnav-link" href="https://www.nwoods.com/sales/index.html"
-					target="_blank"rel="noopener" onclick="getOutboundLink('https://www.nwoods.com/sales/index.html', 'buy');">Buy</a></li>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="../../index.html">Home</a></li>
+					<li><a href="../../learn/index.html">Learn</a></li>
+					<li><a href="../../samples/index.html">Samples</a></li>
+					<li><a href="../../intro/index.html">Intro</a></li>
+					<li><a href="../../api/index.html" target="api">API</a></li>
+					<li><a href="https://www.nwoods.com/components/evalform.htm">Register</a></li>
+					<li><a href="../../download.html">Download</a></li>
+					<li><a href="https://forum.nwoods.com/c/gojs">Forum</a></li>
+					<li><a href="https://www.nwoods.com/contact.html" onclick="ga('send','event','Outbound Link','click','contact');">Contact</a></li>
+					<li class="buy"><a href="https://www.nwoods.com/sales/index.html" onclick="ga('send','event','Outbound Link','click','buy');">Buy</a></li>
+					<li class="activate"><a href="https://www.nwoods.com/app/activate.aspx?sku=gojs">Activate</a></li>
 				</ul>
-			</div>
+			</div><!--/.nav-collapse -->
 		</div>
-		<hr class="border-b border-gray-600 opacity-50 my-0 py-0" />
 	</nav>
-	<div class="tsd tsd-page-header">
+	<div class="tsd-page-header">
 		<div class="tsd-page-toolbar">
-			<div class="w-full max-w-screen-xl mx-auto px-2">
+			<div class="container-fluid plr15">
 				<div class="table-wrap">
-					<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 						<div class="field">
 							<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 							<input id="tsd-search-field" type="text" />
@@ -78,10 +78,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="tsd tsd-page-title">
-			<div class="w-full max-w-screen-xl mx-auto px-2">
+		<div class="tsd-page-title">
+			<div class="container-fluid plr15">
 				<div class="top-copyright">
-					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.49<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
+					<!--<b>GoJS</b>&reg; Diagramming Components<br/>version &lt;br/&gt;version 2.1.32 for TypeScript/HTML<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>-->
+					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.32<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
 					<h1>Class DraggingTool</h1>
@@ -90,23 +91,23 @@
 		</div>
 	</div>
 </header>
-<div class="tsd w-full max-w-screen-xl mx-auto pb-4">
-	<div class="row px-2 w-full">
+<div class="container-fluid container-main plr15">
+	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="Tool.html" class="tsd-signature-type" data-tsd-kind="Class">Tool</a>
+						<a href="Tool.html" class="tsd-signature-type">Tool</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">DraggingTool</span>
 								<ul class="tsd-hierarchy">
 									<li>
-										<a href="GuidedDraggingTool.html" class="tsd-signature-type" data-tsd-kind="Class">GuidedDraggingTool</a>
+										<a href="GuidedDraggingTool.html" class="tsd-signature-type">GuidedDraggingTool</a>
 									</li>
 									<li>
-										<a href="NonRealtimeDraggingTool.html" class="tsd-signature-type" data-tsd-kind="Class">NonRealtimeDraggingTool</a>
+										<a href="NonRealtimeDraggingTool.html" class="tsd-signature-type">NonRealtimeDraggingTool</a>
 									</li>
 								</ul>
 							</li>
@@ -144,12 +145,11 @@
 						As a further convenience, the value of NaN in minLocation and maxLocation cause <a href="Diagram.html#computeMove">Diagram.computeMove</a> to use the
 						part&#39;s current location.
 					So, for example, an easy way to declare that the user may only drag a node horizontally is to just set:</p>
-					<pre><code class="language-js"><span style="color: #DCDCAA">$</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">go</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">Node</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">  . . .</span>
-<span style="color: #D4D4D4">  { </span><span style="color: #9CDCFE">minLocation:</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">new</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">go</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">Point</span><span style="color: #D4D4D4">(-</span><span style="color: #569CD6">Infinity</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">NaN</span><span style="color: #D4D4D4">), </span><span style="color: #9CDCFE">maxLocation:</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">new</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">go</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">Point</span><span style="color: #D4D4D4">(</span><span style="color: #569CD6">Infinity</span><span style="color: #D4D4D4">, </span><span style="color: #569CD6">NaN</span><span style="color: #D4D4D4">) },</span>
-<span style="color: #D4D4D4">  . . .</span>
-<span style="color: #D4D4D4">)</span>
-</code></pre>
+					<pre><code class="hljs js">$(go.Node,
+  . . .
+  { <span class="hljs-attr">minLocation</span>: <span class="hljs-keyword">new</span> go.Point(-<span class="hljs-literal">Infinity</span>, <span class="hljs-literal">NaN</span>), <span class="hljs-attr">maxLocation</span>: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-literal">Infinity</span>, <span class="hljs-literal">NaN</span>) },
+  . . .
+)</code></pre>
 					<p>If you set <a href="DraggingTool.html#isGridSnapEnabled">isGridSnapEnabled</a> to true, dragged or copied parts will be snapped to points on a grid.
 						The snapping occurs continuously during a drag unless you set <a href="DraggingTool.html#isGridSnapRealtime">isGridSnapRealtime</a> to false.
 						Normally the grid points come from the <a href="Diagram.html#grid">Diagram.grid</a>, even if that grid is not <a href="GraphObject.html#visible">GraphObject.visible</a>.
@@ -161,50 +161,47 @@
 						or override <a href="Diagram.html#computeMove">Diagram.computeMove</a>.
 						For the common case of wanting to keep member nodes within the <a href="Group.html">Group</a> that they are members of,
 					you can do something like:</p>
-					<pre><code class="language-js"><span style="color: #D4D4D4"> </span><span style="color: #6A9955">// this is a Part.dragComputation function for limiting where a Node may be dragged</span>
-<span style="color: #D4D4D4">  </span><span style="color: #569CD6">function</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">stayInGroup</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">part</span><span style="color: #D4D4D4">, </span><span style="color: #9CDCFE">pt</span><span style="color: #D4D4D4">, </span><span style="color: #9CDCFE">gridpt</span><span style="color: #D4D4D4">) {</span>
-<span style="color: #D4D4D4">    </span><span style="color: #6A9955">// don&#039;t constrain top-level nodes</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">grp</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">part</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">containingGroup</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">    </span><span style="color: #C586C0">if</span><span style="color: #D4D4D4"> (</span><span style="color: #9CDCFE">grp</span><span style="color: #D4D4D4"> === </span><span style="color: #569CD6">null</span><span style="color: #D4D4D4">) </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">pt</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">    </span><span style="color: #6A9955">// try to stay within the background Shape of the Group</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">back</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">grp</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">resizeObject</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">    </span><span style="color: #C586C0">if</span><span style="color: #D4D4D4"> (</span><span style="color: #9CDCFE">back</span><span style="color: #D4D4D4"> === </span><span style="color: #569CD6">null</span><span style="color: #D4D4D4">) </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">pt</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">    </span><span style="color: #6A9955">// allow dragging a Node out of a Group if the Shift key is down</span>
-<span style="color: #D4D4D4">    </span><span style="color: #C586C0">if</span><span style="color: #D4D4D4"> (</span><span style="color: #9CDCFE">part</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">diagram</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">lastInput</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">shift</span><span style="color: #D4D4D4">) </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">pt</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">p1</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">back</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">getDocumentPoint</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">go</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">Spot</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">TopLeft</span><span style="color: #D4D4D4">);</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">p2</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">back</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">getDocumentPoint</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">go</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">Spot</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">BottomRight</span><span style="color: #D4D4D4">);</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">b</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">part</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">actualBounds</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">loc</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">part</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">location</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">    </span><span style="color: #6A9955">// find the padding inside the group&#039;s placeholder that is around the member parts</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">m</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">grp</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">placeholder</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">padding</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">    </span><span style="color: #6A9955">// now limit the location appropriately, assuming no grid-snapping</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4"> = </span><span style="color: #4EC9B0">Math</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">max</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">p1</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4"> + </span><span style="color: #9CDCFE">m</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">left</span><span style="color: #D4D4D4">, </span><span style="color: #4EC9B0">Math</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">min</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">pt</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4">, </span><span style="color: #9CDCFE">p2</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4"> - </span><span style="color: #9CDCFE">m</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">right</span><span style="color: #D4D4D4"> - </span><span style="color: #9CDCFE">b</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">width</span><span style="color: #D4D4D4"> - </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">)) + (</span><span style="color: #9CDCFE">loc</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4">-</span><span style="color: #9CDCFE">b</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4">);</span>
-<span style="color: #D4D4D4">    </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">y</span><span style="color: #D4D4D4"> = </span><span style="color: #4EC9B0">Math</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">max</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">p1</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">y</span><span style="color: #D4D4D4"> + </span><span style="color: #9CDCFE">m</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">top</span><span style="color: #D4D4D4">, </span><span style="color: #4EC9B0">Math</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">min</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">pt</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">y</span><span style="color: #D4D4D4">, </span><span style="color: #9CDCFE">p2</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">y</span><span style="color: #D4D4D4"> - </span><span style="color: #9CDCFE">m</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">bottom</span><span style="color: #D4D4D4"> - </span><span style="color: #9CDCFE">b</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">height</span><span style="color: #D4D4D4"> - </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">)) + (</span><span style="color: #9CDCFE">loc</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">y</span><span style="color: #D4D4D4">-</span><span style="color: #9CDCFE">b</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">y</span><span style="color: #D4D4D4">);</span>
-<span style="color: #D4D4D4">    </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">new</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">go</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">Point</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4">, </span><span style="color: #9CDCFE">y</span><span style="color: #D4D4D4">);</span>
-<span style="color: #D4D4D4">  }</span>
-</code></pre>
+					<pre><code class="hljs js"> <span class="hljs-comment">// this is a Part.dragComputation function for limiting where a Node may be dragged</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stayInGroup</span>(<span class="hljs-params">part, pt, gridpt</span>) </span>{
+    <span class="hljs-comment">// don't constrain top-level nodes</span>
+    <span class="hljs-keyword">var</span> grp = part.containingGroup;
+    <span class="hljs-keyword">if</span> (grp === <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> pt;
+    <span class="hljs-comment">// try to stay within the background Shape of the Group</span>
+    <span class="hljs-keyword">var</span> back = grp.resizeObject;
+    <span class="hljs-keyword">if</span> (back === <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> pt;
+    <span class="hljs-comment">// allow dragging a Node out of a Group if the Shift key is down</span>
+    <span class="hljs-keyword">if</span> (part.diagram.lastInput.shift) <span class="hljs-keyword">return</span> pt;
+    <span class="hljs-keyword">var</span> p1 = back.getDocumentPoint(go.Spot.TopLeft);
+    <span class="hljs-keyword">var</span> p2 = back.getDocumentPoint(go.Spot.BottomRight);
+    <span class="hljs-keyword">var</span> b = part.actualBounds;
+    <span class="hljs-keyword">var</span> loc = part.location;
+    <span class="hljs-comment">// find the padding inside the group's placeholder that is around the member parts</span>
+    <span class="hljs-keyword">var</span> m = grp.placeholder.padding;
+    <span class="hljs-comment">// now limit the location appropriately</span>
+    <span class="hljs-keyword">var</span> x = <span class="hljs-built_in">Math</span>.max(p1.x + m.left, <span class="hljs-built_in">Math</span>.min(pt.x, p2.x - m.right - b.width - <span class="hljs-number">1</span>)) + (loc.x-b.x);
+    <span class="hljs-keyword">var</span> y = <span class="hljs-built_in">Math</span>.max(p1.y + m.top, <span class="hljs-built_in">Math</span>.min(pt.y, p2.y - m.bottom - b.height - <span class="hljs-number">1</span>)) + (loc.y-b.y);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> go.Point(x, y);
+  }</code></pre>
 					<p>Note that this expects there to be a &quot;SHAPE&quot; object within the Group&#39;s visual tree that delimits
 						where the part may be dragged within the group.
 						This also expects that <a href="Group.html#computesBoundsIncludingLinks">Group.computesBoundsIncludingLinks</a> is false.
 					Then in your node template(s), just set:</p>
-					<pre><code class="language-js"><span style="color: #DCDCAA">$</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">go</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">Node</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">  . . .,</span>
-<span style="color: #D4D4D4">  { </span><span style="color: #9CDCFE">dragComputation:</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">stayInGroup</span><span style="color: #D4D4D4"> },</span>
-<span style="color: #D4D4D4">  . . .</span>
-<span style="color: #D4D4D4">)</span>
-</code></pre>
+					<pre><code class="hljs js">$(go.Node,
+  . . .,
+  { <span class="hljs-attr">dragComputation</span>: stayInGroup },
+  . . .
+)</code></pre>
 					<p>This tool does not utilize any <a href="Adornment.html">Adornment</a>s or tool handles.
 						If the drag is successful, it raises the &quot;SelectionMoved&quot; or &quot;SelectionCopied&quot; <a href="DiagramEvent.html">DiagramEvent</a>
 					and produces a &quot;Move&quot; or a &quot;Copy&quot; transaction.</p>
 					<p>If you want to programmatically start a new user&#39;s dragging of a particular existing node,
 					you can make sure that node is selected, set the <a href="DraggingTool.html#currentPart">currentPart</a> property, and then start and activate the tool.</p>
-					<pre><code class="language-js"><span style="color: #D4D4D4">  </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">node</span><span style="color: #D4D4D4"> = ...;</span>
-<span style="color: #D4D4D4">  </span><span style="color: #9CDCFE">myDiagram</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">select</span><span style="color: #D4D4D4">(</span><span style="color: #9CDCFE">node</span><span style="color: #D4D4D4">);        </span><span style="color: #6A9955">// in this case the only selected node</span>
-<span style="color: #D4D4D4">  </span><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">tool</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">myDiagram</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">toolManager</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">draggingTool</span><span style="color: #D4D4D4">;</span>
-<span style="color: #D4D4D4">  </span><span style="color: #9CDCFE">tool</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">currentPart</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">node</span><span style="color: #D4D4D4">;       </span><span style="color: #6A9955">// the DraggingTool will not call standardMouseSelect</span>
-<span style="color: #D4D4D4">  </span><span style="color: #9CDCFE">myDiagram</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">currentTool</span><span style="color: #D4D4D4"> = </span><span style="color: #9CDCFE">tool</span><span style="color: #D4D4D4">;  </span><span style="color: #6A9955">// starts the DraggingTool</span>
-<span style="color: #D4D4D4">  </span><span style="color: #9CDCFE">tool</span><span style="color: #D4D4D4">.</span><span style="color: #DCDCAA">doActivate</span><span style="color: #D4D4D4">();             </span><span style="color: #6A9955">// activates the DraggingTool</span>
-</code></pre>
+					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> node = ...;
+  myDiagram.select(node);        <span class="hljs-comment">// in this case the only selected node</span>
+  <span class="hljs-keyword">var</span> tool = myDiagram.toolManager.draggingTool;
+  tool.currentPart = node;       <span class="hljs-comment">// the DraggingTool will not call standardMouseSelect</span>
+  myDiagram.currentTool = tool;  <span class="hljs-comment">// starts the DraggingTool</span>
+  tool.doActivate();             <span class="hljs-comment">// activates the DraggingTool</span></code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -214,7 +211,7 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="DraggingTool.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -241,23 +238,23 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#canStart" class="tsd-kind-icon">can<wbr>Start</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#canStart" class="tsd-kind-icon">can<wbr>Start</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#computeEffectiveCollection" class="tsd-kind-icon">compute<wbr>Effective<wbr>Collection</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#computeMove" class="tsd-kind-icon">compute<wbr>Move</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#doActivate" class="tsd-kind-icon">do<wbr>Activate</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#doCancel" class="tsd-kind-icon">do<wbr>Cancel</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#doDeactivate" class="tsd-kind-icon">do<wbr>Deactivate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doActivate" class="tsd-kind-icon">do<wbr>Activate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doCancel" class="tsd-kind-icon">do<wbr>Cancel</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doDeactivate" class="tsd-kind-icon">do<wbr>Deactivate</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doDragOver" class="tsd-kind-icon">do<wbr>Drag<wbr>Over</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doDropOnto" class="tsd-kind-icon">do<wbr>Drop<wbr>Onto</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#doKeyDown" class="tsd-kind-icon">do<wbr>Key<wbr>Down</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#doKeyUp" class="tsd-kind-icon">do<wbr>Key<wbr>Up</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#doMouseMove" class="tsd-kind-icon">do<wbr>Mouse<wbr>Move</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#doMouseUp" class="tsd-kind-icon">do<wbr>Mouse<wbr>Up</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doKeyDown" class="tsd-kind-icon">do<wbr>Key<wbr>Down</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doKeyUp" class="tsd-kind-icon">do<wbr>Key<wbr>Up</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doMouseMove" class="tsd-kind-icon">do<wbr>Mouse<wbr>Move</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#doMouseUp" class="tsd-kind-icon">do<wbr>Mouse<wbr>Up</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#findDraggablePart" class="tsd-kind-icon">find<wbr>Draggable<wbr>Part</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#mayCopy" class="tsd-kind-icon">may<wbr>Copy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#mayMove" class="tsd-kind-icon">may<wbr>Move</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#moveParts" class="tsd-kind-icon">move<wbr>Parts</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="DraggingTool.html#standardMouseSelect" class="tsd-kind-icon">standard<wbr>Mouse<wbr>Select</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="DraggingTool.html#standardMouseSelect" class="tsd-kind-icon">standard<wbr>Mouse<wbr>Select</a></li>
 							</ul>
 						</section>
 					</div>
@@ -265,13 +262,13 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>
 						constructor
 					</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Dragging<wbr>Tool<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="DraggingTool.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingTool</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Dragging<wbr>Tool<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="DraggingTool.html" class="tsd-signature-type">DraggingTool</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -280,7 +277,7 @@
 								because one already exists as the <a href="ToolManager.html#draggingTool">ToolManager.draggingTool</a>, which you can modify.</p>
 								<p>The <a href="Tool.html#name">Tool.name</a> of this tool is &quot;Dragging&quot;.</p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="DraggingTool.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingTool</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="DraggingTool.html" class="tsd-signature-type">DraggingTool</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -291,7 +288,7 @@
 					<a name="copiedParts" class="tsd-anchor"></a>
 					<h3>
 						copied<wbr>Parts
-					<span class="tsd-signature-symbol">: </span><a href="Map.html" class="tsd-signature-type" data-tsd-kind="Class">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span>        </h3>
+					<span class="tsd-signature-symbol">: </span><a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>        </h3>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
@@ -326,7 +323,7 @@
 					<a name="currentPart" class="tsd-anchor"></a>
 					<h3>
 						current<wbr>Part
-					<span class="tsd-signature-symbol">: </span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a>        </h3>
+					<span class="tsd-signature-symbol">: </span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>        </h3>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
@@ -356,7 +353,7 @@
 					<a name="dragOptions" class="tsd-anchor"></a>
 					<h3>
 						drag<wbr>Options
-					<span class="tsd-signature-symbol">: </span><a href="DraggingOptions.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingOptions</a>        </h3>
+					<span class="tsd-signature-symbol">: </span><a href="DraggingOptions.html" class="tsd-signature-type">DraggingOptions</a>        </h3>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
@@ -386,7 +383,7 @@
 					<a name="draggedParts" class="tsd-anchor"></a>
 					<h3>
 						dragged<wbr>Parts
-					<span class="tsd-signature-symbol">: </span><a href="Map.html" class="tsd-signature-type" data-tsd-kind="Class">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span>        </h3>
+					<span class="tsd-signature-symbol">: </span><a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>        </h3>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
@@ -446,7 +443,7 @@
 					<a name="gridSnapCellSize" class="tsd-anchor"></a>
 					<h3>
 						grid<wbr>Snap<wbr>Cell<wbr>Size
-					<span class="tsd-signature-symbol">: </span><a href="Size.html" class="tsd-signature-type" data-tsd-kind="Class">Size</a>        </h3>
+					<span class="tsd-signature-symbol">: </span><a href="Size.html" class="tsd-signature-type">Size</a>        </h3>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
@@ -463,7 +460,7 @@
 					<a name="gridSnapCellSpot" class="tsd-anchor"></a>
 					<h3>
 						grid<wbr>Snap<wbr>Cell<wbr>Spot
-					<span class="tsd-signature-symbol">: </span><a href="Spot.html" class="tsd-signature-type" data-tsd-kind="Class">Spot</a>        </h3>
+					<span class="tsd-signature-symbol">: </span><a href="Spot.html" class="tsd-signature-type">Spot</a>        </h3>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
@@ -481,7 +478,7 @@
 					<a name="gridSnapOrigin" class="tsd-anchor"></a>
 					<h3>
 						grid<wbr>Snap<wbr>Origin
-					<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a>        </h3>
+					<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type">Point</a>        </h3>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
@@ -583,7 +580,7 @@
 					<a name="startPoint" class="tsd-anchor"></a>
 					<h3>
 						start<wbr>Point
-					<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a>        </h3>
+					<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type">Point</a>        </h3>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
@@ -599,13 +596,13 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="canStart" class="tsd-anchor"></a>
 					<h3>
-						<span class="tsd-flag ts-flagOverride">Override</span> <span class="tsd-flag ts-flagVirtual">Virtual</span>
+						<span class="tsd-flag ts-flagVirtual">Virtual</span> <span class="tsd-flag ts-flagOverride">Override</span>
 						can<wbr>Start
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">can<wbr>Start<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -628,7 +625,7 @@
 						compute<wbr>Effective<wbr>Collection
 					</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">compute<wbr>Effective<wbr>Collection<span class="tsd-signature-symbol">(</span>parts<span class="tsd-signature-symbol">: </span><a href="Iterable.html" class="tsd-signature-type" data-tsd-kind="Interface">Iterable</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">: </span><a href="DraggingOptions.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Map.html" class="tsd-signature-type" data-tsd-kind="Class">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">compute<wbr>Effective<wbr>Collection<span class="tsd-signature-symbol">(</span>parts<span class="tsd-signature-symbol">: </span><a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">: </span><a href="DraggingOptions.html" class="tsd-signature-type">DraggingOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -640,19 +637,19 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>parts: <a href="Iterable.html" class="tsd-signature-type" data-tsd-kind="Interface">Iterable</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>parts: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A <a href="Set.html">Set</a> or <a href="List.html">List</a> of <a href="Part.html">Part</a>s.</p>
 									</div>
 								</li>
 								<li>
-									<h5>options: <a href="DraggingOptions.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingOptions</a></h5>
+									<h5>options: <a href="DraggingOptions.html" class="tsd-signature-type">DraggingOptions</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Potential options for the collection computation</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="Map.html" class="tsd-signature-type" data-tsd-kind="Class">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>a Map mapping <a href="Part.html">Part</a>s to DraggingInfo Objects
 							that have a &quot;point&quot; property remembering the original location of that Part.</p>
 						</li>
@@ -665,7 +662,7 @@
 						compute<wbr>Move
 					</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">compute<wbr>Move<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a>, newloc<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a>, draggedparts<span class="tsd-signature-symbol">?: </span><a href="Map.html" class="tsd-signature-type" data-tsd-kind="Class">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span>, result<span class="tsd-signature-symbol">?: </span><a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a></li>
+						<li class="tsd-signature tsd-kind-icon">compute<wbr>Move<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><a href="Part.html" class="tsd-signature-type">Part</a>, newloc<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type">Point</a>, draggedparts<span class="tsd-signature-symbol">?: </span><a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, result<span class="tsd-signature-symbol">?: </span><a href="Point.html" class="tsd-signature-type">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type">Point</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -687,43 +684,43 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>n: <a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a></h5>
+									<h5>n: <a href="Part.html" class="tsd-signature-type">Part</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the Node or simple Part that is being moved</p>
 									</div>
 								</li>
 								<li>
-									<h5>newloc: <a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a></h5>
+									<h5>newloc: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the proposed new location</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> draggedparts: <a href="Map.html" class="tsd-signature-type" data-tsd-kind="Class">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> draggedparts: <a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>an optional Map mapping <a href="Part.html">Part</a>s to DraggingInfo Objects
 										that have a &quot;point&quot; property remembering the original location of that Part.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> result: <a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> result: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>an optional Point that is modified and returned</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="Point.html" class="tsd-signature-type">Point</a></h4>
 							<p>the possibly grid-snapped computed Point that is within the minimum and maximum permitted locations</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="doActivate" class="tsd-anchor"></a>
 					<h3>
 						<span class="tsd-flag ts-flagOverride">Override</span>
 						do<wbr>Activate
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">do<wbr>Activate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -745,13 +742,13 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="doCancel" class="tsd-anchor"></a>
 					<h3>
 						<span class="tsd-flag ts-flagOverride">Override</span>
 						do<wbr>Cancel
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">do<wbr>Cancel<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -763,13 +760,13 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="doDeactivate" class="tsd-anchor"></a>
 					<h3>
 						<span class="tsd-flag ts-flagOverride">Override</span>
 						do<wbr>Deactivate
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">do<wbr>Deactivate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -788,7 +785,7 @@
 						do<wbr>Drag<wbr>Over
 					</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">do<wbr>Drag<wbr>Over<span class="tsd-signature-symbol">(</span>pt<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a>, obj<span class="tsd-signature-symbol">: </span><a href="GraphObject.html" class="tsd-signature-type" data-tsd-kind="Class">GraphObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Drag<wbr>Over<span class="tsd-signature-symbol">(</span>pt<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type">Point</a>, obj<span class="tsd-signature-symbol">: </span><a href="GraphObject.html" class="tsd-signature-type">GraphObject</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -806,13 +803,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pt: <a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a></h5>
+									<h5>pt: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>a Point in document coordinates.</p>
 									</div>
 								</li>
 								<li>
-									<h5>obj: <a href="GraphObject.html" class="tsd-signature-type" data-tsd-kind="Class">GraphObject</a></h5>
+									<h5>obj: <a href="GraphObject.html" class="tsd-signature-type">GraphObject</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the <a href="GraphObject.html">GraphObject</a> at the point,
 											excluding what is being dragged or temporary objects;
@@ -833,7 +830,7 @@
 						do<wbr>Drop<wbr>Onto
 					</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">do<wbr>Drop<wbr>Onto<span class="tsd-signature-symbol">(</span>pt<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a>, obj<span class="tsd-signature-symbol">: </span><a href="GraphObject.html" class="tsd-signature-type" data-tsd-kind="Class">GraphObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Drop<wbr>Onto<span class="tsd-signature-symbol">(</span>pt<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type">Point</a>, obj<span class="tsd-signature-symbol">: </span><a href="GraphObject.html" class="tsd-signature-type">GraphObject</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -851,13 +848,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pt: <a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a></h5>
+									<h5>pt: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>a Point in document coordinates.</p>
 									</div>
 								</li>
 								<li>
-									<h5>obj: <a href="GraphObject.html" class="tsd-signature-type" data-tsd-kind="Class">GraphObject</a></h5>
+									<h5>obj: <a href="GraphObject.html" class="tsd-signature-type">GraphObject</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the <a href="GraphObject.html">GraphObject</a> where the drop occurred,
 											excluding what was dropped or temporary objects;
@@ -871,13 +868,13 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="doKeyDown" class="tsd-anchor"></a>
 					<h3>
 						<span class="tsd-flag ts-flagOverride">Override</span>
 						do<wbr>Key<wbr>Down
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">do<wbr>Key<wbr>Down<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -889,13 +886,13 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="doKeyUp" class="tsd-anchor"></a>
 					<h3>
 						<span class="tsd-flag ts-flagOverride">Override</span>
 						do<wbr>Key<wbr>Up
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">do<wbr>Key<wbr>Up<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -907,13 +904,13 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="doMouseMove" class="tsd-anchor"></a>
 					<h3>
 						<span class="tsd-flag ts-flagOverride">Override</span>
 						do<wbr>Mouse<wbr>Move
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">do<wbr>Mouse<wbr>Move<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -927,13 +924,13 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="doMouseUp" class="tsd-anchor"></a>
 					<h3>
 						<span class="tsd-flag ts-flagOverride">Override</span>
 						do<wbr>Mouse<wbr>Up
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">do<wbr>Mouse<wbr>Up<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -957,7 +954,7 @@
 						find<wbr>Draggable<wbr>Part
 					</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Draggable<wbr>Part<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Draggable<wbr>Part<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -967,7 +964,11 @@
 								<p>This method may be overridden.
 								Please read the Introduction page on <a href="../../intro/extensions.html">Extensions</a> for how to override methods and how to call this base method.</p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a></h4>
+							<h4 class="tsd-returns-title">Returns
+								<a href="Part.html" class="tsd-signature-type">Part</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
 						</li>
 					</ul>
 				</section>
@@ -1021,7 +1022,7 @@
 						move<wbr>Parts
 					</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">move<wbr>Parts<span class="tsd-signature-symbol">(</span>parts<span class="tsd-signature-symbol">: </span><a href="Map.html" class="tsd-signature-type" data-tsd-kind="Class">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span>, offset<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a>, check<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">move<wbr>Parts<span class="tsd-signature-symbol">(</span>parts<span class="tsd-signature-symbol">: </span><a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span>, offset<span class="tsd-signature-symbol">: </span><a href="Point.html" class="tsd-signature-type">Point</a>, check<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1043,14 +1044,14 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>parts: <a href="Map.html" class="tsd-signature-type" data-tsd-kind="Class">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type" data-tsd-kind="Class">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type" data-tsd-kind="Class">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>parts: <a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><a href="Part.html" class="tsd-signature-type">Part</a><span class="tsd-signature-symbol">, </span><a href="DraggingInfo.html" class="tsd-signature-type">DraggingInfo</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>a Map mapping <a href="Part.html">Part</a>s to DraggingInfo Objects
 										that have a &quot;point&quot; property remembering the original location of that Part.</p>
 									</div>
 								</li>
 								<li>
-									<h5>offset: <a href="Point.html" class="tsd-signature-type" data-tsd-kind="Class">Point</a></h5>
+									<h5>offset: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The offset, before snapping, to move parts.
 											This offset reflects the total amount moved during tool operation,
@@ -1058,9 +1059,9 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> check: <span class="tsd-signature-type">boolean</span></h5>
+									<h5>check: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Whether to check <a href="Part.html#canMove">Part.canMove</a> on each part.  The default value is false.</p>
+										<p>Whether to check <a href="Part.html#canMove">Part.canMove</a> on each part.</p>
 									</div>
 								</li>
 							</ul>
@@ -1068,13 +1069,13 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="standardMouseSelect" class="tsd-anchor"></a>
 					<h3>
-						<span class="tsd-flag ts-flagOverride">Override</span> <span class="tsd-flag ts-flagVirtual">Virtual</span>
+						<span class="tsd-flag ts-flagVirtual">Virtual</span> <span class="tsd-flag ts-flagOverride">Override</span>
 						standard<wbr>Mouse<wbr>Select
 					</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">standard<wbr>Mouse<wbr>Select<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -1094,8 +1095,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class=" ">
-						<a href="../index.html">GoJS <wbr>Class <wbr>Index</a>
+					<li class="globals  ">
+						<a href="../index.html"><em>GoJS <wbr>Class <wbr>Index</em></a>
 					</li>
 				</ul>
 			</nav>
@@ -1106,7 +1107,7 @@
 					<li class="current tsd-kind-class">
 						<a href="DraggingTool.html" class="tsd-kind-icon">Dragging<wbr>Tool</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="DraggingTool.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
@@ -1157,7 +1158,7 @@
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="DraggingTool.html#startPoint" class="tsd-kind-icon">start<wbr>Point</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#canStart" class="tsd-kind-icon">can<wbr>Start</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -1166,13 +1167,13 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#computeMove" class="tsd-kind-icon">compute<wbr>Move</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#doActivate" class="tsd-kind-icon">do<wbr>Activate</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#doCancel" class="tsd-kind-icon">do<wbr>Cancel</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#doDeactivate" class="tsd-kind-icon">do<wbr>Deactivate</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -1181,16 +1182,16 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#doDropOnto" class="tsd-kind-icon">do<wbr>Drop<wbr>Onto</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#doKeyDown" class="tsd-kind-icon">do<wbr>Key<wbr>Down</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#doKeyUp" class="tsd-kind-icon">do<wbr>Key<wbr>Up</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#doMouseMove" class="tsd-kind-icon">do<wbr>Mouse<wbr>Move</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#doMouseUp" class="tsd-kind-icon">do<wbr>Mouse<wbr>Up</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -1205,7 +1206,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#moveParts" class="tsd-kind-icon">move<wbr>Parts</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="DraggingTool.html#standardMouseSelect" class="tsd-kind-icon">standard<wbr>Mouse<wbr>Select</a>
 							</li>
 						</ul>
@@ -1217,33 +1218,22 @@
 		</div>
 	</div>
 </div>
-<div class="tsd w-full max-w-screen-xl mx-auto px-2">
-	<div class="bottom-copyright">Copyright &copy; 1998-2021 by Northwoods Software Corporation.</div>
+<div class="container-fluid bottom-copyright plr15">
+	Copyright &copy; 1998-2020 by Northwoods Software Corporation.
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1506307-5"></script>
+<script src="../../assets/js/api.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date()); gtag('config', 'UA-1506307-5');
-  var getOutboundLink = function(url, label) {
-    gtag('event', 'click', {
-      'event_category': 'outbound',
-      'event_label': label,
-      'transport_type': 'beacon'
-    });
-  }
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  // topnav
-  var topButton = document.getElementById("topnavButton");
-  var topnavList = document.getElementById("topnavList");
-  topButton.addEventListener("click", function() {
-    this.classList.toggle("active");
-    topnavList.classList.toggle("hidden");
-    document.getElementById("topnavOpen").classList.toggle("hidden");
-    document.getElementById("topnavClosed").classList.toggle("hidden");
-  });
-</script>
+        ga('create', 'UA-1506307-5', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -45,7 +45,7 @@ var __extends = (this && this.__extends) || (function () {
      * This tool uses a temporary {@link Shape}, {@link #temporaryShape}, held by a {@link Part} in the "Tool" layer,
      * to show interactively what the user is drawing.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/PolygonDrawing.html">Polygon Drawing</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/PolygonDrawing.html">Polygon Drawing</a> sample.
      * @category Tool Extension
      */
     var PolygonDrawingTool = /** @class */ (function (_super) {
@@ -164,29 +164,16 @@ var __extends = (this && this.__extends) || (function () {
             return (obj === null);
         };
         /**
-        * Start a transaction, capture the mouse, use a "crosshair" cursor,
-        * and start accumulating points in the geometry of the {@link #temporaryShape}.
-        * @this {PolygonDrawingTool}
-        */
-        PolygonDrawingTool.prototype.doStart = function () {
-            _super.prototype.doStart.call(this);
-            var diagram = this.diagram;
-            if (!diagram)
-                return;
-            this.startTransaction(this.name);
-            diagram.currentCursor = diagram.defaultCursor = "crosshair";
-            if (!diagram.lastInput.isTouchEvent)
-                diagram.isMouseCaptured = true;
-        };
-        /**
          * Start a transaction, capture the mouse, use a "crosshair" cursor,
          * and start accumulating points in the geometry of the {@link #temporaryShape}.
          */
         PolygonDrawingTool.prototype.doActivate = function () {
             _super.prototype.doActivate.call(this);
             var diagram = this.diagram;
-            if (!diagram)
-                return;
+            this.startTransaction(this.name);
+            if (!diagram.lastInput.isTouchEvent)
+                diagram.isMouseCaptured = true;
+            diagram.currentCursor = 'crosshair';
             // the first point
             if (!diagram.lastInput.isTouchEvent)
                 this.addPoint(diagram.lastInput.documentPoint);
@@ -194,15 +181,13 @@ var __extends = (this && this.__extends) || (function () {
         /**
          * Stop the transaction and clean up.
          */
-        PolygonDrawingTool.prototype.doStop = function () {
-            _super.prototype.doStop.call(this);
+        PolygonDrawingTool.prototype.doDeactivate = function () {
+            _super.prototype.doDeactivate.call(this);
             var diagram = this.diagram;
-            if (!diagram)
-                return;
-            diagram.currentCursor = diagram.defaultCursor = "auto";
             if (this.temporaryShape !== null && this.temporaryShape.part !== null) {
                 diagram.remove(this.temporaryShape.part);
             }
+            diagram.currentCursor = '';
             if (diagram.isMouseCaptured)
                 diagram.isMouseCaptured = false;
             this.stopTransaction();

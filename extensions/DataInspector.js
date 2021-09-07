@@ -1,6 +1,6 @@
 "use strict";
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /**
@@ -410,9 +410,7 @@ Inspector.prototype.buildPropertyRow = function(propertyName, propertyValue) {
     input.addEventListener("change", updateall);
   } else {
     input = document.createElement("input");
-    if (input.setPointerCapture) {
-      input.addEventListener("pointerdown", function(e) { input.setPointerCapture(e.pointerId); });
-    }
+
     input.value = this.convertToString(propertyValue);
     if (decProp) {
       var t = decProp.type;

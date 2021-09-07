@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -43,7 +43,7 @@ var __extends = (this && this.__extends) || (function () {
      * This layout assumes Links are automatically routed in the way needed by fishbone diagrams,
      * by using the FishboneLink class instead of go.Link.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Fishbone.html">Fishbone Layout</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/Fishbone.html">Fishbone Layout</a> sample.
      * @category Layout Extension
      */
     var FishboneLayout = /** @class */ (function (_super) {

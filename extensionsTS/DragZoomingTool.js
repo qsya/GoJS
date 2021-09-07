@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -64,7 +64,7 @@ var __extends = (this && this.__extends) || (function () {
      * but it does temporarily add the {@link #box} part to the diagram.
      * This tool does not modify the model or conduct any transaction.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/DragZooming.html">Drag Zooming</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/DragZooming.html">Drag Zooming</a> sample.
      * @category Tool Extension
      */
     var DragZoomingTool = /** @class */ (function (_super) {

@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -24,7 +24,7 @@ import * as go from '../release/go-module.js';
  * {@link #inset}, for leaving room for a text label, and
  * {@link #gap}, for distance that the extension line starts from the measured points.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Dimensioning.html">Dimensioning</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/Dimensioning.html">Dimensioning</a> sample.
  * @category Part Extension
  */
 export class DimensioningLink extends go.Link {

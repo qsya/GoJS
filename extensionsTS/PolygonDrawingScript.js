@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
@@ -43,7 +43,6 @@
         // provide the default JavaScript object for a new polygon in the model
         tool.archetypePartData = { fill: 'yellow', stroke: 'blue', strokeWidth: 3, category: 'PolygonDrawing' };
         tool.isPolygon = true; // for a polyline drawing tool set this property to false
-        tool.isEnabled = false;
         // install as first mouse-down-tool
         myDiagram.toolManager.mouseDownTools.insertAt(0, tool);
         load(); // load a simple diagram from the textarea
@@ -56,8 +55,6 @@
         tool.isPolygon = polygon;
         tool.archetypePartData.fill = (polygon ? 'yellow' : null);
         tool.temporaryShape.fill = (polygon ? 'yellow' : null);
-        if (draw)
-            myDiagram.currentTool = tool;
     }
     exports.mode = mode;
     // this command ends the PolygonDrawingTool

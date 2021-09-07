@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 // This is the definitions of the predefined text editor used by TextEditingTool
 // when you set or bind TextBlock.editable to true.
@@ -26,19 +26,19 @@ import * as go from '../release/go-module.js';
         const tool = TextEditor.tool;
         if (tool.textBlock === null)
             return;
-        const key = e.key;
-        if (key === "Enter") { // Enter
+        const keynum = e.which;
+        if (keynum === 13) { // Enter
             if (tool.textBlock.isMultiline === false)
                 e.preventDefault();
             tool.acceptText(go.TextEditingTool.Enter);
             return;
         }
-        else if (key === "Tab") { // Tab
+        else if (keynum === 9) { // Tab
             tool.acceptText(go.TextEditingTool.Tab);
             e.preventDefault();
             return;
         }
-        else if (key === "Escape") { // Esc
+        else if (keynum === 27) { // Esc
             tool.doCancel();
             if (tool.diagram !== null)
                 tool.diagram.doFocus();

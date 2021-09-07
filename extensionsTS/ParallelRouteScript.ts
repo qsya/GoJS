@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -26,7 +26,7 @@ export function init() {
 
   myDiagram.nodeTemplate =
     $(go.Node, 'Auto',
-      new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify),
+      new go.Binding('location', 'loc', go.Point.parse),
       $(go.Shape,
         {
           portId: '',

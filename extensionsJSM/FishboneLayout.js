@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 /*
 * This is an extension and not part of the main GoJS library.
@@ -18,7 +18,7 @@ import * as go from '../release/go-module.js';
  * This layout assumes Links are automatically routed in the way needed by fishbone diagrams,
  * by using the FishboneLink class instead of go.Link.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Fishbone.html">Fishbone Layout</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/Fishbone.html">Fishbone Layout</a> sample.
  * @category Layout Extension
  */
 export class FishboneLayout extends go.TreeLayout {

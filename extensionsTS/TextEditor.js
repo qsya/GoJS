@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
@@ -37,19 +37,19 @@
             var tool = TextEditor.tool;
             if (tool.textBlock === null)
                 return;
-            var key = e.key;
-            if (key === "Enter") { // Enter
+            var keynum = e.which;
+            if (keynum === 13) { // Enter
                 if (tool.textBlock.isMultiline === false)
                     e.preventDefault();
                 tool.acceptText(go.TextEditingTool.Enter);
                 return;
             }
-            else if (key === "Tab") { // Tab
+            else if (keynum === 9) { // Tab
                 tool.acceptText(go.TextEditingTool.Tab);
                 e.preventDefault();
                 return;
             }
-            else if (key === "Escape") { // Esc
+            else if (keynum === 27) { // Esc
                 tool.doCancel();
                 if (tool.diagram !== null)
                     tool.diagram.doFocus();

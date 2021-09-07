@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -23,8 +23,7 @@ export function init() {
       'undoManager.isEnabled': true  // enable undo & redo
     });
 
-  myDiagram.toolManager.mouseDownTools.insertAt(3,
-    $(GeometryReshapingTool, { isResegmenting: true }));
+  myDiagram.toolManager.mouseDownTools.insertAt(3, new GeometryReshapingTool());
 
   myDiagram.nodeTemplate =
     $(go.Node,
@@ -35,7 +34,7 @@ export function init() {
       )
     );
 
-    myDiagram.model = new go.GraphLinksModel([{ geo: "F M0 145 L75 8 C100 20 120 40 131 87 C160 70 180 50 195 0 L249 133z", key: -1 }], []);
+  myDiagram.model = new go.GraphLinksModel([{ geo: 'F M0 145 L75 2 L131 87 L195 0 L249 143z', key: -1 }], []);
 
   // Attach to the window for console manipulation
   (window as any).myDiagram = myDiagram;

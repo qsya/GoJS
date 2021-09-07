@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -19,7 +19,7 @@ import * as go from '../release/go.js';
  * myDiagram.toolManager.mouseDownTools.add(new LinkShiftingTool());
  * ```
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/LinkShifting.html">Link Shifting</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/LinkShifting.html">Link Shifting</a> sample.
  * @category Tool Extension
  */
 export class LinkShiftingTool extends go.Tool {

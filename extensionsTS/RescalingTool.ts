@@ -1,5 +1,5 @@
 ﻿/*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 import * as go from '../release/go.js';
@@ -27,7 +27,7 @@ import * as go from '../release/go.js';
 * <a>RescalingTool.rescaleObjectName</a> and set <a>RescalingTool.isEnabled</a> to control
 * whether objects are rescalable and when.
 *
-* If you want to experiment with this extension, try the <a href="../../extensionsJSM/Rescaling.html">Rescaling</a> sample.
+* If you want to experiment with this extension, try the <a href="../../extensionsTS/Rescaling.html">Rescaling</a> sample.
 * @category Tool Extension
 */
 export class RescalingTool extends go.Tool {

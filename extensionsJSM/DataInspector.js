@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 /*
 * This is an extension and not part of the main GoJS library.
@@ -58,7 +58,7 @@ import * as go from '../release/go-module.js';
  * </div>
  * ```
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/DataInspector.html">Data Inspector</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/DataInspector.html">Data Inspector</a> sample.
  * @category Extension
  */
 export class Inspector {
@@ -577,37 +577,34 @@ export class Inspector {
             }
         }
         if (decProp && decProp.type === 'select') {
-            const inputs = input = document.createElement('select');
-            this.updateSelect(decProp, inputs, propertyName, propertyValue);
-            inputs.addEventListener('change', updateall);
+            input = document.createElement('select');
+            this.updateSelect(decProp, input, propertyName, propertyValue);
+            input.addEventListener('change', updateall);
         }
         else {
-            const inputi = input = document.createElement('input');
-            if (inputi && inputi.setPointerCapture) {
-                inputi.addEventListener("pointerdown", e => inputi.setPointerCapture(e.pointerId));
-            }
-            inputi.value = this.convertToString(propertyValue);
+            input = document.createElement('input');
+            input.value = this.convertToString(propertyValue);
             if (decProp) {
                 const t = decProp.type;
                 if (t !== 'string' && t !== 'number' && t !== 'boolean' &&
                     t !== 'arrayofnumber' && t !== 'point' && t !== 'size' &&
                     t !== 'rect' && t !== 'spot' && t !== 'margin') {
-                    inputi.setAttribute('type', decProp.type);
+                    input.setAttribute('type', decProp.type);
                 }
                 if (decProp.type === 'color') {
-                    if (inputi.type === 'color') {
-                        inputi.value = this.convertToColor(propertyValue);
+                    if (input.type === 'color') {
+                        input.value = this.convertToColor(propertyValue);
                         // input.addEventListener('input', updateall); // removed with multi select
-                        inputi.addEventListener('change', updateall);
+                        input.addEventListener('change', updateall);
                     }
                 }
                 if (decProp.type === 'checkbox') {
-                    inputi.checked = !!propertyValue;
-                    inputi.addEventListener('change', updateall);
+                    input.checked = !!propertyValue;
+                    input.addEventListener('change', updateall);
                 }
             }
-            if (inputi.type !== 'color')
-                inputi.addEventListener('blur', updateall);
+            if (input.type !== 'color')
+                input.addEventListener('blur', updateall);
         }
         if (input) {
             input.tabIndex = this.tabIndex++;

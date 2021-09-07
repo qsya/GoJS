@@ -1,12 +1,12 @@
 /*
-* Copyright (C) 1998-2021 by Northwoods Software Corporation
+* Copyright (C) 1998-2020 by Northwoods Software Corporation
 * All Rights Reserved.
 *
 * FloorplanPalette Class
 * A FloorplanPalette is a Palette with special rules
 */
 
-import * as go from '../../../release/go';
+import * as go from 'gojs';
 import { Floorplan } from './Floorplan.js';
 
 export class FloorplanPalette extends go.Palette {

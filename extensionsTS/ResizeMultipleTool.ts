@@ -1,5 +1,5 @@
 ﻿/*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -15,7 +15,7 @@ import * as go from '../release/go.js';
 /**
  * The ResizeMultipleTool class lets the user resize multiple objects at once.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/ResizeMultiple.html">Resize Multiple</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/ResizeMultiple.html">Resize Multiple</a> sample.
  * @category Tool Extension
  */
 export class ResizeMultipleTool extends go.ResizingTool {

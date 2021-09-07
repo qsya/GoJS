@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -37,7 +37,7 @@ var __extends = (this && this.__extends) || (function () {
     /**
      * The OverviewResizingTool class lets the user resize the box within an overview.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/OverviewResizing.html">Overview Resizing</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/OverviewResizing.html">Overview Resizing</a> sample.
      * @category Tool Extension
      */
     var OverviewResizingTool = /** @class */ (function (_super) {

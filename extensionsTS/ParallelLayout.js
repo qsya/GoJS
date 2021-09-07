@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -43,7 +43,7 @@ var __extends = (this && this.__extends) || (function () {
      * You can set all of the TreeLayout properties that you like,
      * except that for simplicity this code just works for angle === 0 or angle === 90.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Parallel.html">Parallel Layout</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/Parallel.html">Parallel Layout</a> sample.
      * @category Layout Extension
      */
     var ParallelLayout = /** @class */ (function (_super) {
@@ -195,18 +195,6 @@ var __extends = (this && this.__extends) || (function () {
             // don't have TreeLayout lay out the Merge node; commitNodes will do it
             if (this.mergeNode)
                 net.deleteNode(this.mergeNode);
-            // for each vertex that does not have an incoming edge,
-            // connect to it from the splitNode vertex with a dummy edge
-            if (this.splitNode) {
-                var splitv = net.findVertex(this.splitNode);
-                net.vertexes.each(function (v) {
-                    if (splitv === null || v === splitv)
-                        return;
-                    if (v.sourceEdges.count === 0) {
-                        net.linkVertexes(splitv, v, null);
-                    }
-                });
-            }
             return net;
         };
         /**

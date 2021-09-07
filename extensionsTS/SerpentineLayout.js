@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -44,7 +44,7 @@ var __extends = (this && this.__extends) || (function () {
      *
      * When this layout is the Diagram.layout, it is automatically invalidated when the viewport changes size.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Serpentine.html">Serpentine Layout</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/Serpentine.html">Serpentine Layout</a> sample.
      * @category Layout Extension
      */
     var SerpentineLayout = /** @class */ (function (_super) {

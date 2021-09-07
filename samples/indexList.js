@@ -1,4 +1,4 @@
-/* Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved. */
+/* Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved. */
 /**
  * Be sure to add any new samples to this list, to assets/js/goSamples.js, and to samples/all.html.
  */
@@ -1136,22 +1136,6 @@ arr.push([
   ["customlayout", "extensions"]
 ]);
 
-arr.push([
-  "../extensionsTS/VirtualizedPacked",
-  "Virtualized Packed Layout",
-  "A virtualized version of PackedLayout that positions nodes in a packed area.",
-  "VirtualizedPacked",
-  ["customlayout", "extensions", "performance"]
-]);
-
-arr.push([
-  "../extensions/PanelLayoutFlow",
-  "Flow PanelLayout",
-  "A custom PanelLayout that arranges panel elements into rows or columns.",
-  "PanelLayoutFlow",
-  ["customlayout", "extensions"]
-]);
-
 // Tools
 arr.push([
   "../extensions/RealtimeDragSelecting",
@@ -1189,14 +1173,6 @@ arr.push([
   "Rotate Multiple",
   "A custom RotatingTool that lets the user rotate many selected objects at once.",
   "RotateMultiple",
-  ["tools", "extensions"]
-]);
-
-arr.push([
-  "../extensions/SpotRotating",
-  "Spot Rotating",
-  "A custom RotatingTool that lets the user shift the rotation point.",
-  "SpotRotating",
   ["tools", "extensions"]
 ]);
 
@@ -1505,7 +1481,7 @@ arr.push([
   "BPMN Editor",
   "The start of a Business Process Model and Notation editor.",
   "BPMN",
-  ["tables", "itemarrays", "collections", "customlayout", "groups", "tooltips", "contextmenus", "tools", "palette", "overview", "buttons", "geometries", "html", "frameworks"]
+  ["tables", "itemarrays", "collections", "customlayout", "groups", "tooltips", "contextmenus", "tools", "palette", "overview", "buttons", "extensions", "geometries", "html", "frameworks"]
 ]);
 
 arr.push([
@@ -1513,7 +1489,7 @@ arr.push([
   "Floor Planner (TypeScript)",
   "A feature-rich editor for users to create robust, detailed floor plans.",
   "FloorPlannerTS",
-  ["featured", "collections", "groups", "tooltips", "contextmenus", "tools", "palette", "overview", "buttons", "geometries", "grid", "html"]
+  ["featured", "collections", "groups", "tooltips", "contextmenus", "tools", "palette", "overview", "buttons", "extensions", "geometries", "grid", "html"]
 ]);
 
 arr.push(["minimal",
@@ -1533,7 +1509,7 @@ arr.push([
 ]);
 
 arr.push([
-  "minimalSvg",
+  "minimalSVG",
   "Minimal SVG Download",
   "Minimal, showing SVG creation with Diagram.makeSvg, and download.",
   "minimal",

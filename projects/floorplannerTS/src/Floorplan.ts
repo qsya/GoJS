@@ -1,12 +1,12 @@
 /*
-* Copyright (C) 1998-2021 by Northwoods Software Corporation
+* Copyright (C) 1998-2020 by Northwoods Software Corporation
 * All Rights Reserved.
 *
 * Floorplan Class
 * A Floorplan is a Diagram with special rules
 */
 
-import * as go from '../../../release/go';
+import * as go from 'gojs';
 import { NodeLabelDraggingTool } from './NodeLabelDraggingTool.js';
 import { WallBuildingTool } from './WallBuildingTool.js';
 import { WallReshapingTool } from './WallReshapingTool.js';
@@ -2956,7 +2956,7 @@ export class Floorplan extends go.Diagram {
 } // end Floorplan class definition
 
 /*
-* Copyright (C) 1998-2021 by Northwoods Software Corporation
+* Copyright (C) 1998-2020 by Northwoods Software Corporation
 * All Rights Reserved.
 *
 * FLOOR PLANNER CODE: TEMPLATES - GENERAL
@@ -3384,7 +3384,7 @@ function makeDimensionLink(opacity?: number, stroke?: string, strokeWidth?: numb
 }
 
 /*
-* Copyright (C) 1998-2021 by Northwoods Software Corporation
+* Copyright (C) 1998-2020 by Northwoods Software Corporation
 * All Rights Reserved.
 *
 * FLOOR PLANNER CODE: TEMPLATES - FURNITURE
@@ -3625,7 +3625,7 @@ function updateNodeTexture(obj: go.Shape, t: string) {
 }
 
 /*
-* Copyright (C) 1998-2021 by Northwoods Software Corporation
+* Copyright (C) 1998-2020 by Northwoods Software Corporation
 * All Rights Reserved.
 *
 * FLOOR PLANNER CODE: TEMPLATES - WALLS

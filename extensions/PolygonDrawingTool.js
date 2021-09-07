@@ -1,6 +1,6 @@
 "use strict";
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 // A custom Tool for drawing polygons or polylines
@@ -67,23 +67,12 @@ PolygonDrawingTool.prototype.canStart = function() {
 * and start accumulating points in the geometry of the {@link #temporaryShape}.
 * @this {PolygonDrawingTool}
 */
-PolygonDrawingTool.prototype.doStart = function() {
-  go.Tool.prototype.doStart.call(this);
-  var diagram = this.diagram;
-  if (!diagram) return;
-  this.startTransaction(this.name);
-  diagram.currentCursor = diagram.defaultCursor = "crosshair";
-  if (!diagram.lastInput.isTouchEvent) diagram.isMouseCaptured = true;
-}
-
-/**
- * When activated, start the temporary shape with an initial point at the current mouse point.
-* @this {PolygonDrawingTool}
- */
 PolygonDrawingTool.prototype.doActivate = function() {
   go.Tool.prototype.doActivate.call(this);
   var diagram = this.diagram;
-  if (!diagram) return;
+  this.startTransaction(this.name);
+  if (!diagram.lastInput.isTouchEvent) diagram.isMouseCaptured = true;
+  diagram.currentCursor = "crosshair";
   // the first point
   if (!diagram.lastInput.isTouchEvent) this.addPoint(diagram.lastInput.documentPoint);
 };
@@ -92,17 +81,16 @@ PolygonDrawingTool.prototype.doActivate = function() {
 * Stop the transaction and clean up.
 * @this {PolygonDrawingTool}
 */
-PolygonDrawingTool.prototype.doStop = function() {
-  go.Tool.prototype.doStop.call(this);
+PolygonDrawingTool.prototype.doDeactivate = function() {
+  go.Tool.prototype.doDeactivate.call(this);
   var diagram = this.diagram;
-  if (!diagram) return;
-  diagram.currentCursor = diagram.defaultCursor = "auto";
   if (this.temporaryShape !== null) {
     diagram.remove(this.temporaryShape.part);
   }
+  diagram.currentCursor = "";
   if (diagram.isMouseCaptured) diagram.isMouseCaptured = false;
   this.stopTransaction();
-}
+};
 
 /**
 * Given a potential Point for the next segment, return a Point it to snap to the grid, and remain orthogonal, if either is applicable.

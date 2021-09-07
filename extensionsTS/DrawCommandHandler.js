@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -53,7 +53,7 @@ var __extends = (this && this.__extends) || (function () {
      *    myDiagram.commandHandler = new DrawCommandHandler();
      * ```
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/DrawCommandHandler.html">Drawing Commands</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/DrawCommandHandler.html">Drawing Commands</a> sample.
      * @category Extension
      */
     var DrawCommandHandler = /** @class */ (function (_super) {

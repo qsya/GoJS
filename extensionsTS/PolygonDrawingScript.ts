@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -55,7 +55,6 @@ export function init() {
   // provide the default JavaScript object for a new polygon in the model
   tool.archetypePartData = { fill: 'yellow', stroke: 'blue', strokeWidth: 3, category: 'PolygonDrawing' };
   tool.isPolygon = true;  // for a polyline drawing tool set this property to false
-  tool.isEnabled = false;
   // install as first mouse-down-tool
   myDiagram.toolManager.mouseDownTools.insertAt(0, tool);
 
@@ -69,7 +68,6 @@ export function mode(draw: boolean, polygon: boolean) {
   tool.isPolygon = polygon;
   (tool.archetypePartData as go.Shape).fill = (polygon ? 'yellow' : null);
   tool.temporaryShape.fill = (polygon ? 'yellow' : null);
-  if (draw) myDiagram.currentTool = tool;
 }
 
 // this command ends the PolygonDrawingTool

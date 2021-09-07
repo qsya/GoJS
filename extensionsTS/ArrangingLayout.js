@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -41,7 +41,7 @@ var __extends = (this && this.__extends) || (function () {
     * arranging layout.  Any disconnected nodes are laid out later by a
     * side layout, by default in a grid underneath the main body of subgraphs.
     *
-    * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Arranging.html">Arranging Layout</a> sample.
+    * If you want to experiment with this extension, try the <a href="../../extensionsTS/Arranging.html">Arranging Layout</a> sample.
     *
     * This layout uses three separate Layouts.
     *

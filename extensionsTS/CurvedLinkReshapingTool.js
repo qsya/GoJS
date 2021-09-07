@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -39,7 +39,7 @@ var __extends = (this && this.__extends) || (function () {
      * via the dragging of a single tool handle at the middle of the link.
      * Dragging the handle changes the value of {@link Link#curviness}.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/CurvedLinkReshaping.html">Curved Link Reshaping</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/CurvedLinkReshaping.html">Curved Link Reshaping</a> sample.
      * @category Tool Extension
      */
     var CurvedLinkReshapingTool = /** @class */ (function (_super) {

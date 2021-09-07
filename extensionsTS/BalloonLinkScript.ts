@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -14,7 +14,7 @@ import * as go from '../release/go.js';
 import { BalloonLink } from './BalloonLink.js';
 
 export function init() {
-  if ((window as any).goSamples) (window as any).goSamples();  // init for these samples -- you don't need to call this
+  if ((window as any).goSamples()) (window as any).goSamples();  // init for these samples -- you don't need to call this
 
   const $ = go.GraphObject.make;  // for conciseness in defining templates
 

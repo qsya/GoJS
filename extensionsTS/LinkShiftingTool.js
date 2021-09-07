@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -41,7 +41,7 @@ var __extends = (this && this.__extends) || (function () {
      * myDiagram.toolManager.mouseDownTools.add(new LinkShiftingTool());
      * ```
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/LinkShifting.html">Link Shifting</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/LinkShifting.html">Link Shifting</a> sample.
      * @category Tool Extension
      */
     var LinkShiftingTool = /** @class */ (function (_super) {

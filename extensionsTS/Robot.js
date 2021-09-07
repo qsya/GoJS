@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
@@ -30,7 +30,7 @@
      * Although {@link InputEvent#targetDiagram} is a real property,
      * the `sourceDiagram` property is only used by these Robot methods.
      *
-     * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Robot.html">Simulating Input</a> sample.
+     * If you want to experiment with this extension, try the <a href="../../extensionsTS/Robot.html">Simulating Input</a> sample.
      * @category Extension
      */
     var Robot = /** @class */ (function () {

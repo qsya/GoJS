@@ -1,5 +1,5 @@
 ﻿/*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -16,7 +16,7 @@ import * as go from '../release/go-module.js';
  * Given a root {@link Node}, this arranges connected nodes in concentric rings,
  * layered by the minimum link distance from the root.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/Radial.html">Radial Layout</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/Radial.html">Radial Layout</a> sample.
  * @category Layout Extension
  */
 export class RadialLayout extends go.Layout {
@@ -84,14 +84,11 @@ export class RadialLayout extends go.Layout {
    * Find distances between root and vertexes, and then lay out radially.
    * @param {Diagram|Group|Iterable.<Part>} coll A {@link Diagram} or a {@link Group} or a collection of {@link Part}s.
    */
-   public doLayout(coll: go.Diagram | go.Group | go.Iterable<go.Part>): void {
+  public doLayout(coll: go.Diagram | go.Group | go.Iterable<go.Part>): void {
     if (this.network === null) {
       this.network = this.makeNetwork(coll);
     }
-    if (this.network.vertexes.count === 0) {
-      this.network = null;
-      return;
-    }
+    if (this.network.vertexes.count === 0) return;
 
     if (this.root === null) {
       // If no root supplied, choose one without any incoming edges
@@ -109,10 +106,7 @@ export class RadialLayout extends go.Layout {
       const first = this.network.vertexes.first();
       this.root = first === null ? null : first.node;
     }
-    if (this.root === null) {  // nothing to do
-      this.network = null;
-      return;
-    }
+    if (this.root === null) return;  // nothing to do
 
     const rootvert = this.network.findVertex(this.root) as RadialVertex;
     if (rootvert === null) throw new Error('RadialLayout.root must be a Node in the LayoutNetwork that the RadialLayout is operating on');

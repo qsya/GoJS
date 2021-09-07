@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 
 /*
@@ -49,7 +49,7 @@ import * as go from '../release/go-module.js';
  * <p class="box">
  * The diagram div's parent element should use `position: relative` to ensure the slider gets positioned properly.
  *
- * If you want to experiment with this extension, try the <a href="../../extensionsJSM/ZoomSlider.html">Zoom Slider</a> sample.
+ * If you want to experiment with this extension, try the <a href="../../extensionsTS/ZoomSlider.html">Zoom Slider</a> sample.
  * @category Extension
  */
 export class ZoomSlider {

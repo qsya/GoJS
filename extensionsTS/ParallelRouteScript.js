@@ -1,5 +1,5 @@
 /*
-*  Copyright (C) 1998-2021 by Northwoods Software Corporation. All Rights Reserved.
+*  Copyright (C) 1998-2020 by Northwoods Software Corporation. All Rights Reserved.
 */
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
@@ -30,7 +30,7 @@
             'undoManager.isEnabled': true
         });
         myDiagram.nodeTemplate =
-            $(go.Node, 'Auto', new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify), $(go.Shape, {
+            $(go.Node, 'Auto', new go.Binding('location', 'loc', go.Point.parse), $(go.Shape, {
                 portId: '',
                 fromLinkable: true, toLinkable: true,
                 fromLinkableDuplicates: true, toLinkableDuplicates: true,
